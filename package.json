@@ -1,0 +1,10 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "ecommerce app with react and redux",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "2.2.1"
+  }
+}
