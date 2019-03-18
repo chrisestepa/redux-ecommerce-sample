@@ -70,10 +70,40 @@ export function fetchProducts() {
     })
 }
 
-export function fetchProduct() {
+export function fetchProduct(productId) {
+    return async(dispatch => {
+        dispatch(() => {
+            return {
+                type: 'FETCH_PRODUCT_INIT'
+            }
+        })
+
+        try {
+            const data = await API.products.getSingle(productId);
+            return dispatch(fetchProductSuccess(data.product))
+        }
+        catch (error) {
+            return dispatch(fetchProductFailure(error))
+        }
+    })
 
 }
 
-export function saveProduct() {
+export function saveProduct(product) {
+    return async(dispatch => {
+        dispatch(() => {
+            return {
+                type: 'SAVE_PRODUCT_INIT'
+            }
+        })
+
+        try {
+            await API.products.save(product);
+            return dispatch(saveProductSuccess())
+        }
+        catch (error) {
+            return dispatch(saveProductFailure())
+        }
+    })
 
 }
