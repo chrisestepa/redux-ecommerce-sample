@@ -30,7 +30,7 @@ export default function cartReducer(state = initialState.cart, action) {
                     ...state.items.slice(0, index),
                     ...state.items.slice(index + 1)
                 ],
-                total: state.total - action.payload.price
+                total: state.total - item.price
             };
         }
 

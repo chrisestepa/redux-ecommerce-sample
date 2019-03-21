@@ -1,14 +1,15 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
-import productList from './productListReducer';
-import activeProduct from './activeProductReducer';
-import cart from './cartReducer';
+import productListReducer from './productListReducer';
+import activeProductReducer from './activeProductReducer';
+import cartReducer from './cartReducer';
 
 const rootReducer = combineReducers({
-    productList,
-    activeProduct,
-    cart
+    routing: routerReducer,
+    productListReducer,
+    activeProductReducer,
+    cartReducer
 });
 
 export default rootReducer;
-
