@@ -5,24 +5,34 @@ import {
 } from '../actions/types';
 import initialState from './initialState';
 
-export default function cart(state = initialState.cart, action) {
+export default function cartReducer(state = initialState.cart, action) {
     switch (action.type) {
         case LOAD_CART_ITEMS:
             return {
-                state
+                ...state,
+                items: [...state.items]
             };
 
         case ADD_CART_ITEM:
             return {
                 ...state,
-                total: total + 1
+                items: [...state.items, action.payload],
+                total: state.total + action.payload.price
             };
 
-        case REMOVE_CART_ITEM:
+        case REMOVE_CART_ITEM: {
+            const searchItem = (elem) => elem._id === action.payload._id;
+            const item = state.items.find(searchItem);
+            const index = state.items.findIndex(searchItem);
             return {
                 ...state,
-                total: total -1
+                items: [
+                    ...state.items.slice(0, index),
+                    ...state.items.slice(index + 1)
+                ],
+                total: state.total - action.payload.price
             };
+        }
 
         default:
             return state;
