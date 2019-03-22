@@ -5,7 +5,7 @@ import {
 } from '../actions/types';
 import initialState from './initialState';
 
-export default function activeProductReducer(state = initialState.productList, action) {
+export default function activeProduct(state = initialState.productList, action) {
     switch (action.type) {
         case FETCH_PRODUCT_INIT:
             return {

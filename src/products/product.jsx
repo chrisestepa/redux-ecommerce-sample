@@ -7,14 +7,13 @@ const Product = ({
     description,
     image,
     price,
-    availability,
     deliveryStimate,
     category
 }) => (
         <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="card">
                 <Link to={`/detail/${_id}`}>
-                    <img className="card-img-top" width="100%" src="{image}" alt="{description}" />
+                    <img className="card-img-top" width="100%" src={image} alt={description} />
                 </Link>
                 <div className="card-block">
                     <Link to={`/detail/${_id}`}>
@@ -42,7 +41,6 @@ Product.propTypes = {
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    availability: PropTypes.string.isRequired,
     deliveryStimate: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired
 }

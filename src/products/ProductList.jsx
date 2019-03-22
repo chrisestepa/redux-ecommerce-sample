@@ -7,7 +7,7 @@ const ProductList = ({
 }) => (
     <section className="container">
         { loading && <span>Cargando datos...</span> }
-        <iv className="row">
+        <div className="row">
         {
             products.map(product => (
                 <Product
