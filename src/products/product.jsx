@@ -8,7 +8,8 @@ const Product = ({
     image,
     price,
     deliveryStimate,
-    category
+    category,
+    onAddItem
 }) => (
         <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="card">
@@ -27,8 +28,10 @@ const Product = ({
                     <li className="list-group-item"><span className="badge badge-pill badge-info">{category}</span></li>
                 </ul>
                 <div className="card-block">
-                    <button className="btn btn-primary">
-                        <span className="fa fa-cart-plus" />Añadir al carrito
+                    <button 
+                        onClick={ () => onAddItem({ _id, name, description, image, price, deliveryStimate, category })}
+                        className="btn btn-primary">
+                            <span className="fa fa-cart-plus" />Añadir al carrito
                     </button>
                 </div>
             </div>
