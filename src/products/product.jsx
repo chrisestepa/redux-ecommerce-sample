@@ -22,7 +22,7 @@ const Product = ({
                     <p className="card-text">{description}</p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item"><strong>{price} &euro</strong></li>
+                    <li className="list-group-item"><strong>{price} &euro;</strong></li>
                     <li className="list-group-item"><strong>Entrega: </strong> {deliveryStimate}</li>
                     <li className="list-group-item"><span className="badge badge-pill badge-info">{category}</span></li>
                 </ul>
