@@ -45,7 +45,8 @@ Product.propTypes = {
     image: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     deliveryStimate: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired
+    category: PropTypes.string.isRequired,
+    onAddItem: PropTypes.func.isRequired
 }
 
 export default Product;

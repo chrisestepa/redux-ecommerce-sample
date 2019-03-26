@@ -8,10 +8,16 @@ import * as actions from '../actions/cartActions';
 class CartContainer extends Component {
     constructor(props) {
         super(props)
+
+        this.handleOnRemoveItem = this.handleOnRemoveItem.bind(this);
     }
 
     componentWillMount() {
         this.props.actions.loadCartItems();
+    }
+
+    handleOnRemoveItem (itemId) {
+        this.props.actions.removeCartItem(itemId);
     }
 
     render() {
@@ -19,7 +25,7 @@ class CartContainer extends Component {
             <section className="container">
                 <CartItemList
                     items={this.props.items}
-                    total={this.props.total}
+                    onRemoveItem={this.handleOnRemoveItem}
                 />
             </section>
         )

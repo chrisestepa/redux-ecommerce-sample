@@ -13,6 +13,7 @@ const ProductList = ({
             products.map(product => (
                 <Product
                 key={Product._id}
+                onAddItem={onAddItem}
                 {...product}
             />
             ))
