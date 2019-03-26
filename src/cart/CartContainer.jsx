@@ -27,6 +27,10 @@ class CartContainer extends Component {
                     items={this.props.items}
                     onRemoveItem={this.handleOnRemoveItem}
                 />
+                <hr />
+                <div className="row">
+                    <p>Total: <strong>{this.props.total} &euro;</strong></p>
+                </div>
             </section>
         )
     }
