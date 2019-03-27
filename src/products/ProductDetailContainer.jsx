@@ -13,7 +13,7 @@ class ProductDetailContainer extends Component {
         this.handleOnAddItem = this.handleOnAddItem.bind(this);
     }
 
-    async componeWillMount() {
+    async componentWillMount() {
         await this.props.productActions.fetchProduct(this.props.productId);
     }
 
