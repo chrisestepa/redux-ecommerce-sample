@@ -41,9 +41,10 @@ export function fetchProductFailure(error) {
     };
 }
 
-export function saveProductSuccess() {
+export function saveProductSuccess(product) {
     return {
-        type: SAVE_PRODUCT_SUCCESS
+        type: SAVE_PRODUCT_SUCCESS,
+        payload: product
     };
 }
 
@@ -102,10 +103,10 @@ export function saveProduct(product) {
 
         try {
             await API.products.save(product);
-            return dispatch(saveProductSuccess())
+            return dispatch(saveProductSuccess(product))
         }
         catch (error) {
-            return dispatch(saveProductFailure())
+            return dispatch(saveProductFailure(error))
         }
     }
 
