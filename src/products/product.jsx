@@ -14,7 +14,8 @@ const Product = ({
         <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="card">
                 <Link to={`/detail/${_id}`}>
-                    <img className="card-img-top" width="100%" src={image} alt={description} />
+                    <a href="/"></a>
+                    {/* <img className="card-img-top" width="100%" src={image} alt={description} /> */}
                 </Link>
                 <div className="card-block">
                     <Link to={`/detail/${_id}`}>
@@ -28,10 +29,10 @@ const Product = ({
                     <li className="list-group-item"><span className="badge badge-pill badge-info">{category}</span></li>
                 </ul>
                 <div className="card-block">
-                    <button 
-                        onClick={ () => onAddItem({ _id, name, description, image, price, deliveryStimate, category })}
+                    <button
+                        onClick={() => onAddItem({ _id, name, description, image, price, deliveryStimate, category })}
                         className="btn btn-primary">
-                            <span className="fa fa-cart-plus" />Añadir al carrito
+                        <span className="fa fa-cart-plus" />Añadir al carrito
                     </button>
                 </div>
             </div>

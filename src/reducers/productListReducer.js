@@ -31,13 +31,12 @@ export default function productList(state = initialState.productList, action) {
                 loading: false
             };
 
-        case SAVE_PRODUCT_INIT: {
+        case SAVE_PRODUCT_INIT:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        }
 
         case SAVE_PRODUCT_FAILURE:
             return {
