@@ -13,7 +13,8 @@ export default function productList(state = initialState.productList, action) {
         case FETCH_PRODUCTS_INIT:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                error: null
             };
 
         case FETCH_PRODUCTS_FAILURE:
@@ -28,6 +29,7 @@ export default function productList(state = initialState.productList, action) {
             return {
                 ...state,
                 products: action.payload,
+                error: null,
                 loading: false
             };
 

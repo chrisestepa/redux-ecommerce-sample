@@ -23,7 +23,7 @@ class ProductAddContainer extends Component {
             category: this.categoryInput.value
         };
 
-        await productActions.saveProduct(product);
+        await this.props.productActions.saveProduct(product);
         browserHistory.push('/');
     }
 
@@ -74,7 +74,7 @@ class ProductAddContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(productActions, dispatch)
+        productActions: bindActionCreators(productActions, dispatch)
     }
 }
 
